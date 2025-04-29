@@ -8,10 +8,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ab84d7a6-6a24-4194-a2ec-167d291c4be8" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.HackSlash.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HackSlash.dir/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config/DefaultEditor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Config/DefaultEditor.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Blueprints/BP_ThirdPersonCharacter.uasset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Maps/ThirdPersonMap.umap" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/HackSlash.uproject" beforeDir="false" afterPath="$PROJECT_DIR$/HackSlash.uproject" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/AutoScreenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/AutoScreenshot.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Config/MacEditor/Editor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/MacEditor/Editor.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Config/MacEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/MacEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Saved/Config/MacEditor/GameUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/MacEditor/GameUserSettings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Telemetry/Telemetry.json" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Telemetry/Telemetry.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,11 +33,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="cidr-memory-view://0" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://2" root0="FORCE_HIGHLIGHTING" />
+    <setting file="cidr-memory-view://3" root0="FORCE_HIGHLIGHTING" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 0
-}]]></component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="Toolset" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="2wP0fwd7EqKYPONeqycbY8LYjPh" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -41,8 +52,8 @@
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "Uproject.HackSlash.executor": "Debug",
-    "git-widget-placeholder": "ProjectSetup__Vaibhav",
+    "Uproject.HackSlash.executor": "Run",
+    "git-widget-placeholder": "dev",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -135,6 +146,10 @@
       <option name="presentableId" value="Default" />
       <updated>1745928009064</updated>
       <workItem from="1745928013111" duration="543000" />
+      <workItem from="1745930835076" duration="249000" />
+      <workItem from="1745931119118" duration="712000" />
+      <workItem from="1745931949923" duration="2572000" />
+      <workItem from="1745946493217" duration="7738000" />
     </task>
     <servers />
   </component>
