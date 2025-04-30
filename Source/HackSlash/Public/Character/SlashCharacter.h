@@ -13,5 +13,20 @@ UCLASS()
 class HACKSLASH_API ASlashCharacter : public ASlashCharacterBase
 {
 	GENERATED_BODY()
+
+public:
+	ASlashCharacter();
+
+	virtual void PossessedBy(AController* NewController) override;
+	virtual void OnRep_PlayerState() override;
+
+private:
+	void InitAbilityActorInfo();
+
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+	class USpringArmComponent* CameraBoom;
+	
+	UPROPERTY(VisibleAnywhere, Category = Camera)
+	class UCameraComponent* FollowCamera;
 	
 };

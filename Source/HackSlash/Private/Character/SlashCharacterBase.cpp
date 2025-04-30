@@ -14,6 +14,16 @@ ASlashCharacterBase::ASlashCharacterBase()
 
 }
 
+UAbilitySystemComponent* ASlashCharacterBase::GetAbilitySystemComponent() const
+{
+	return AbilitySystemComponent;
+}
+
+UAttributeSet* ASlashCharacterBase::GetAttributeSet() const
+{
+	return AttributeSet;
+}
+
 // Called when the game starts or when spawned
 void ASlashCharacterBase::BeginPlay()
 {

@@ -13,5 +13,11 @@ UCLASS()
 class HACKSLASH_API ASlashEnemy : public ASlashCharacterBase
 {
 	GENERATED_BODY()
+
+public:
+	ASlashEnemy();
+	
+	protected:
+	virtual void BeginPlay() override;
 	
 };
