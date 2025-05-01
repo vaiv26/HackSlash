@@ -6,6 +6,7 @@
 #include "Character/SlashCharacterBase.h"
 #include "SlashCharacter.generated.h"
 
+class UGameplayEffect;
 /**
  * 
  */

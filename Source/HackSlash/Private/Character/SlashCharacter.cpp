@@ -6,7 +6,9 @@
 #include "AbilitySystem/SlashAbilitySystemComponent.h"
 #include "Camera/CameraComponent.h"
 #include "GameFramework/SpringArmComponent.h"
+#include "PlayerController/SlashPlayerController.h"
 #include "PlayerController/SlashPlayerState.h"
+#include "UI/HUD/SlashHUD.h"
 
 ASlashCharacter::ASlashCharacter()
 {
@@ -25,6 +27,7 @@ void ASlashCharacter::PossessedBy(AController* NewController)
 	Super::PossessedBy(NewController);
 	//Init ability actor info for Server
 	InitAbilityActorInfo();
+	AddCharacterAbilities();
 }
 
 void ASlashCharacter::OnRep_PlayerState()
@@ -45,13 +48,13 @@ void ASlashCharacter::InitAbilityActorInfo()
 	//Cast<USlashAbilitySystemComponent>(SlashPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 
 	//This is the place we place an if check and not an assert as in the client all three player controllers are not present
-	/*if (ASlashPlayerController* SlashPlayerController =  Cast<ASlashPlayerController>(GetController()))
+	if (ASlashPlayerController* SlashPlayerController =  Cast<ASlashPlayerController>(GetController()))
 	{
-		AAuraHUD* AuraHUD = Cast<AAuraHUD>(AuraPlayerController->GetHUD());
-		if (AuraHUD)
+		ASlashHUD* SlashHUD = Cast<ASlashHUD>(SlashPlayerController->GetHUD());
+		if (SlashHUD)
 		{
-			AuraHUD->InitOverlay(AuraPlayerController, AuraPlayerState, AbilitySystemComponent, AttributeSet);
+			SlashHUD->InitOverlay(SlashPlayerController, SlashPlayerState, AbilitySystemComponent, AttributeSet);
 		}
-	}*/
-	//InitializeDefaultAttributes();
+	}
+	InitializeDefaultAttributes();
 }
