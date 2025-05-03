@@ -22,4 +22,14 @@ public:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Damage")
 	float Damage;
 	
+	UFUNCTION(BlueprintCallable)
+	void CauseDamage(AActor* TargetActor);
+
+protected:
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly)
+	TSubclassOf<UGameplayEffect> DamageEffectClass;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Damage")
+	FGameplayTag DamageType;
+	
 };

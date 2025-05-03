@@ -3,7 +3,9 @@
 
 #include "AbilitySystem/SlashAbilitySystemLibrary.h"
 
+#include "SQCapture.h"
 #include "AbilitySystem/Data/CharacterClassInfo.h"
+#include "Chaos/AABBTree.h"
 #include "Game/SlashGameModeBase.h"
 #include "Interaction/CombatInterface.h"
 #include "Kismet/GameplayStatics.h"
@@ -54,11 +56,33 @@ void USlashAbilitySystemLibrary::InitializeDefaultAttributes(const UObject* Worl
 	ASC->ApplyGameplayEffectSpecToSelf(*VitalAttributesSpecHandle.Data.Get());
 }
 
-void USlashAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* WorldContextObject,
-                                                            TArray<AActor*>& OutOverlappingActors, const TArray<AActor*>& ActorsToIgnore, float Radius,
-                                                            const FVector& SphereOrigin)
+void USlashAbilitySystemLibrary::GiveStartupAbilities(const UObject* WorldContextObject, UAbilitySystemComponent* ASC,
+	ECharacterClass CharacterClass)
 {
-	FCollisionQueryParams SphereParams;
+	ASlashGameModeBase* AuraGameMode = Cast<ASlashGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
+	if (AuraGameMode == nullptr) return;
+ 
+	UCharacterClassInfo* CharacterClassInfo = AuraGameMode->CharacterClassInfo;
+	if (CharacterClassInfo == nullptr) return;
+	for (TSubclassOf<UGameplayAbility> AbilityClass : CharacterClassInfo->CommonAbilities)
+	{
+		FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass, 1);
+		ASC->GiveAbility(AbilitySpec);
+	}
+	const FCharacterClassDefaultInfo& DefaultInfo = CharacterClassInfo->GetClassDefaultInfo(CharacterClass);
+	for (TSubclassOf<UGameplayAbility> AbilityClass : DefaultInfo.StartupAbilities)
+	{
+		if (ICombatInterface* CombatInterface = Cast<ICombatInterface>(ASC->GetAvatarActor()))
+		{
+			FGameplayAbilitySpec AbilitySpec = FGameplayAbilitySpec(AbilityClass);
+			ASC->GiveAbility(AbilitySpec);
+		}
+	}
+}
+
+void USlashAbilitySystemLibrary::GetLivePlayersWithinRadius(const TArray<AActor*>& OverlappingActors, TArray<AActor*>& OutActors)
+{
+	/*FCollisionQueryParams SphereParams;
 	SphereParams.AddIgnoredActors(ActorsToIgnore);
  	
 	if (const UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull))
@@ -72,5 +96,14 @@ void USlashAbilitySystemLibrary::GetLivePlayersWithinRadius(const UObject* World
 				OutOverlappingActors.AddUnique(ICombatInterface::Execute_GetAvatar(Overlap.GetActor()));
 			}
 		}
+	}*/
+
+	for (AActor* QueryActor : OverlappingActors)
+	{
+		if (QueryActor->Implements<UCombatInterface>() && !ICombatInterface::Execute_IsDead(QueryActor))
+		{
+			OutActors.AddUnique(ICombatInterface::Execute_GetAvatar(QueryActor));
+		}
 	}
+	
 }

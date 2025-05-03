@@ -16,8 +16,7 @@ struct FSlashGameplayTags
 public:
 	static FSlashGameplayTags& Get() {return GameplayTags;}
 	static void InitializeNativeGameplayTags();
-
-protected:
+	
 	//Anim montage tag
 	FGameplayTag Event_Montage_Attack_MeleeStart;
 	FGameplayTag Event_Montage_Attack_MeleeEnd;
@@ -27,7 +26,9 @@ protected:
 	FGameplayTag InputTag_1;
 
 	FGameplayTag Damage;
+	FGameplayTag Effects_HitReact;
 
+	FGameplayTag Abilities_Attack;
 private:
 	static FSlashGameplayTags GameplayTags;
 };

@@ -43,7 +43,17 @@ void FSlashGameplayTags::InitializeNativeGameplayTags()
 		);
 
 	GameplayTags.Damage = UGameplayTagsManager::Get().AddNativeGameplayTag(
-	 FName("Damage"),
-	 FString("Damage")
+		 FName("Damage"),
+		 FString("Damage")
+		 );
+	
+	GameplayTags.Effects_HitReact = UGameplayTagsManager::Get().AddNativeGameplayTag(
+		 FName("Effects.HitReact"),
+		 FString("Tag granted when Hit Reacting")
+		 );
+
+	GameplayTags.Abilities_Attack = UGameplayTagsManager::Get().AddNativeGameplayTag(
+	 FName("Abilities.Attack"),
+	 FString("Attack Ability Tag")
 	 );
 }

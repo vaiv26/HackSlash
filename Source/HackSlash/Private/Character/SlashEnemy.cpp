@@ -2,6 +2,8 @@
 
 
 #include "Character/SlashEnemy.h"
+
+#include "SlashGameplayTags.h"
 #include "AbilitySystem/SlashAbilitySystemComponent.h"
 #include "AbilitySystem/SlashAbilitySystemLibrary.h"
 #include "AbilitySystem/SlashAttributeSet.h"
@@ -36,13 +38,20 @@ void ASlashEnemy::PossessedBy(AController* NewController)
 	SlashAIController = Cast<ASlashAIController>(NewController);
 	SlashAIController->GetBlackboardComponent()->InitializeBlackboard(*BehaviorTree->BlackboardAsset);
 	SlashAIController->RunBehaviorTree(BehaviorTree);
+	SlashAIController->GetBlackboardComponent()->SetValueAsBool(FName("HitReacting"), false);
+	SlashAIController->GetBlackboardComponent()->SetValueAsBool(FName("RangedAttacker"), CharacterClass != ECharacterClass::Warrior);
 }
 
 void ASlashEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+	GetCharacterMovement()->MaxWalkSpeed = BaseWalkSpeed;
 	check(AbilitySystemComponent);
 	InitAbilityActorInfo();
+	if (HasAuthority())
+	{
+		USlashAbilitySystemLibrary::GiveStartupAbilities(this, AbilitySystemComponent, CharacterClass);
+	}
 
 	if (USlashUserWidget* AuraUserWidget = Cast<USlashUserWidget>(HealthBar->GetUserWidgetObject()))
 	{
@@ -63,6 +72,9 @@ void ASlashEnemy::BeginPlay()
 				OnMaxHealthChanged.Broadcast(Data.NewValue);
 			}
 		);
+
+		AbilitySystemComponent->RegisterGameplayTagEvent(FSlashGameplayTags::Get().Effects_HitReact, EGameplayTagEventType::NewOrRemoved)
+		.AddUObject(this,&ASlashEnemy::HitReactTagChanged);
  
 		OnHealthChanged.Broadcast(SlashAS->GetHealth());
 		OnMaxHealthChanged.Broadcast(SlashAS->GetMaxHealth());
@@ -78,4 +90,31 @@ void ASlashEnemy::InitAbilityActorInfo()
 void ASlashEnemy::InitializeDefaultAttributes() const
 {
 	USlashAbilitySystemLibrary::InitializeDefaultAttributes(this, CharacterClass, 1.0f, AbilitySystemComponent);
+}
+
+void ASlashEnemy::Die()
+{
+	SetLifeSpan(LifeSpan);
+	Super::Die();
+}
+
+void ASlashEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)
+{
+	CombatTarget = InCombatTarget;
+}
+
+AActor* ASlashEnemy::GetCombatTarget_Implementation() const
+{
+	return CombatTarget;
+}
+
+
+void ASlashEnemy::HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewCount)
+{
+	bHitReacting = NewCount > 0;
+	GetCharacterMovement()->MaxWalkSpeed = bHitReacting ? 0.f : BaseWalkSpeed;
+	if (SlashAIController && SlashAIController->GetBlackboardComponent())
+	{
+		SlashAIController->GetBlackboardComponent()->SetValueAsBool(FName("HitReacting"), bHitReacting);
+	}
 }
