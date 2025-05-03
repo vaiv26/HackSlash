@@ -13,5 +13,13 @@ UCLASS()
 class HACKSLASH_API USlashGameplayAbility : public UGameplayAbility
 {
 	GENERATED_BODY()
+
+public:
+	
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	FGameplayTag StartupInputTag;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category="Damage")
+	float Damage;
 	
 };

@@ -3,9 +3,13 @@
 
 #include "PlayerController/SlashPlayerController.h"
 
+#include "AbilitySystemBlueprintLibrary.h"
 #include "Components/InputComponent.h"
 #include "EnhancedInputSubsystems.h"
 #include "EnhancedInputComponent.h"
+#include "GameplayTagContainer.h"
+#include "AbilitySystem/SlashAbilitySystemComponent.h"
+#include "Input/SlashInputComponent.h"
 
 ASlashPlayerController::ASlashPlayerController()
 {
@@ -23,20 +27,23 @@ void ASlashPlayerController::BeginPlay()
 		Subsystem->AddMappingContext(SlashContext,0);
 	}
 	
-	bShowMouseCursor = true;
-	DefaultMouseCursor = EMouseCursor::Default;
- 
-	FInputModeGameAndUI InputModeData;
-	InputModeData.SetLockMouseToViewportBehavior(EMouseLockMode::DoNotLock);
-	InputModeData.SetHideCursorDuringCapture(false);
-	SetInputMode(InputModeData);
+	// Set input mode to game only and consume mouse clicks
+	FInputModeGameOnly InputModeGameOnly;
+	InputModeGameOnly.SetConsumeCaptureMouseDown(true);
+	SetInputMode(InputModeGameOnly);
+    
+	// Hide the mouse cursor
+	bShowMouseCursor = false;
 }
 
 void ASlashPlayerController::SetupInputComponent()
 {
 	Super::SetupInputComponent();
-	UEnhancedInputComponent * SlashInputComponent = CastChecked<UEnhancedInputComponent>(InputComponent);
-	SlashInputComponent->BindAction(MoveAction,ETriggerEvent::Triggered,this, &ASlashPlayerController::Move);
+
+	USlashInputComponent* SlashInputComponent = CastChecked<USlashInputComponent>(InputComponent);
+	SlashInputComponent->BindAction(MoveAction, ETriggerEvent::Triggered, this, &ASlashPlayerController::Move);
+	SlashInputComponent->BindAction(LookAround, ETriggerEvent::Triggered, this, &ASlashPlayerController::Look);
+	SlashInputComponent->BindAbilityActions(InputConfig, this, &ThisClass::AbilityInputTagPressed, &ThisClass::AbilityInputTagReleased, &ThisClass::AbilityInputTagHeld);
 }
 
 void ASlashPlayerController::Move(const FInputActionValue& InputActionValue)
@@ -51,4 +58,37 @@ void ASlashPlayerController::Move(const FInputActionValue& InputActionValue)
 		ControlledPawn->AddMovementInput(ForwardDirection, InputAxisVector.Y);
 		ControlledPawn->AddMovementInput(RightDirection, InputAxisVector.X);
 	}
+}
+
+void ASlashPlayerController::Look(const FInputActionValue& InputActionValue)
+{
+	const FVector2D InputAxisVector = InputActionValue.Get<FVector2D>();
+	AddYawInput(InputAxisVector.X);
+	AddPitchInput(InputAxisVector.Y);
+}
+
+void ASlashPlayerController::AbilityInputTagPressed(FGameplayTag InputTag)
+{
+	GEngine->AddOnScreenDebugMessage(1, 3.f, FColor::Red, *InputTag.ToString());
+}
+
+void ASlashPlayerController::AbilityInputTagReleased(FGameplayTag InputTag)
+{
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagReleased(InputTag);
+}
+
+void ASlashPlayerController::AbilityInputTagHeld(FGameplayTag InputTag)
+{
+	if (GetASC() == nullptr) return;
+	GetASC()->AbilityInputTagHeld(InputTag);
+}
+
+USlashAbilitySystemComponent* ASlashPlayerController::GetASC()
+{
+	if (AuraAbilitySystemComponent == nullptr)
+	{
+		AuraAbilitySystemComponent = Cast<USlashAbilitySystemComponent>(UAbilitySystemBlueprintLibrary::GetAbilitySystemComponent(GetPawn<APawn>()));
+	}
+	return AuraAbilitySystemComponent;
 }

@@ -6,6 +6,9 @@
 #include "GameFramework/PlayerController.h"
 #include "SlashPlayerController.generated.h"
 
+class USlashAbilitySystemComponent;
+class USlashInputConfig;
+struct FGameplayTag;
 class UInputMappingContext;
 class UInputAction;
 struct FInputActionValue;
@@ -31,6 +34,23 @@ private:
 	UPROPERTY(EditAnywhere, Category="Input")
 	TObjectPtr<UInputAction> MoveAction;
 
+	UPROPERTY(EditAnywhere, Category="Input")
+	TObjectPtr<UInputAction> LookAround;
+
 	void Move(const FInputActionValue& InputActionValue);
+	void Look(const FInputActionValue& InputActionValue);
+	
+	void AbilityInputTagPressed(FGameplayTag InputTag);
+	void AbilityInputTagReleased(FGameplayTag InputTag);
+	void AbilityInputTagHeld(FGameplayTag InputTag);
+ 
+	UPROPERTY(EditDefaultsOnly, Category="Input")
+	TObjectPtr<USlashInputConfig> InputConfig;
+
+	
+	UPROPERTY()
+	TObjectPtr<USlashAbilitySystemComponent> AuraAbilitySystemComponent;
+ 
+	USlashAbilitySystemComponent* GetASC();
 	
 };

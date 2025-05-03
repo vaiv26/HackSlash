@@ -6,6 +6,7 @@
 #include "AbilitySystemComponent.h"
 #include "GameplayEffectTypes.h"
 #include "AbilitySystem/SlashAbilitySystemComponent.h"
+#include "Components/CapsuleComponent.h"
 
 // Sets default values
 ASlashCharacterBase::ASlashCharacterBase()
@@ -15,7 +16,6 @@ ASlashCharacterBase::ASlashCharacterBase()
 
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
 	Weapon->SetupAttachment(GetMesh(),FName("WeaponHandSocket"));
-
 }
 
 UAbilitySystemComponent* ASlashCharacterBase::GetAbilitySystemComponent() const
@@ -28,11 +28,63 @@ UAttributeSet* ASlashCharacterBase::GetAttributeSet() const
 	return AttributeSet;
 }
 
+UAnimMontage* ASlashCharacterBase::GetHitReactMontage_Implementation()
+{
+	return HitReactMontage;
+}
+
+void ASlashCharacterBase::Die()
+{
+	Weapon->DetachFromComponent(FDetachmentTransformRules(EDetachmentRule::KeepWorld, true));
+	MulticastHandleDeath();
+}
+
+FVector ASlashCharacterBase::GetCombatTipSocketLocation_Implementation()
+{
+	check(Weapon);
+	return Weapon->GetSocketLocation(WeaponTipSocketName);
+}
+
+FVector ASlashCharacterBase::GetCombatTailSocketLocation_Implementation()
+{
+	check(Weapon);
+	return Weapon->GetSocketLocation(WeaponTailSocketName);
+}
+
+bool ASlashCharacterBase::IsDead_Implementation() const
+{
+	return bDead;
+}
+
+AActor* ASlashCharacterBase::GetAvatar_Implementation()
+{
+	return this;
+}
+
+void ASlashCharacterBase::MulticastHandleDeath_Implementation()
+{
+	Weapon->SetSimulatePhysics(true);
+	Weapon->SetEnableGravity(true);
+	Weapon->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+ 
+	GetMesh()->SetSimulatePhysics(true);
+	GetMesh()->SetEnableGravity(true);
+	GetMesh()->SetCollisionEnabled(ECollisionEnabled::PhysicsOnly);
+	GetMesh()->SetCollisionResponseToChannel(ECC_WorldStatic, ECR_Block);
+ 
+	GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+	bDead = true;
+}
+
 // Called when the game starts or when spawned
 void ASlashCharacterBase::BeginPlay()
 {
 	Super::BeginPlay();
 	
+}
+
+void ASlashCharacterBase::InitAbilityActorInfo()
+{
 }
 
 void ASlashCharacterBase::ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const

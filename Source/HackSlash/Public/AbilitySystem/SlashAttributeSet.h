@@ -78,6 +78,14 @@ public:
 	UPROPERTY(BlueprintReadOnly, ReplicatedUsing = OnRep_MaxMana, Category = "Vital Attributes")
 	FGameplayAttributeData MaxMana;
 	ATTRIBUTE_ACCESSORS(USlashAttributeSet, MaxMana);
+	
+	/*
+  * Meta Attributes
+  */
+ 
+	UPROPERTY(BlueprintReadOnly, Category = "Meta Attributes")
+	FGameplayAttributeData IncomingDamage;
+	ATTRIBUTE_ACCESSORS(USlashAttributeSet, IncomingDamage);
  
 	UFUNCTION()
 	void OnRep_Health(const FGameplayAttributeData& OldHealth) const;

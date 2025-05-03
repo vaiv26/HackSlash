@@ -14,7 +14,7 @@ ASlashCharacter::ASlashCharacter()
 {
 	CameraBoom = CreateDefaultSubobject<USpringArmComponent>(TEXT("CameraBoom"));
 	CameraBoom->SetupAttachment(GetMesh());
-	CameraBoom->TargetArmLength = 600.f;
+	CameraBoom->TargetArmLength = 400.f;
 	CameraBoom->bUsePawnControlRotation = true;
  
 	FollowCamera = CreateDefaultSubobject<UCameraComponent>(TEXT("FollowCamera"));
@@ -45,7 +45,6 @@ void ASlashCharacter::InitAbilityActorInfo()
 	AbilitySystemComponent =  SlashPlayerState->GetAbilitySystemComponent();
 	AttributeSet = SlashPlayerState->GetAttributeSet();
 	AbilitySystemComponent->InitAbilityActorInfo(SlashPlayerState, this);
-	//Cast<USlashAbilitySystemComponent>(SlashPlayerState->GetAbilitySystemComponent())->AbilityActorInfoSet();
 
 	//This is the place we place an if check and not an assert as in the client all three player controllers are not present
 	if (ASlashPlayerController* SlashPlayerController =  Cast<ASlashPlayerController>(GetController()))
