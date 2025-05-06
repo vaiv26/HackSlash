@@ -9,100 +9,11 @@
   <component name="ChangeListManager">
     <list default="true" id="ab84d7a6-6a24-4194-a2ec-167d291c4be8" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.HackSlash.dir/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.HackSlash.dir/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/BehaviourTree/BB_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/BehaviourTree/BB_Enemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/BehaviourTree/BT_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/BehaviourTree/BT_Enemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/Services/BTS_FindNearestPlayer.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/Services/BTS_FindNearestPlayer.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/AI/Tasks/BT_Attack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/AI/Tasks/BT_Attack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/BS_EnemyWalkRun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/BS_EnemyWalkRun.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/BS_WalkRun.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/BS_WalkRun.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSAttack3_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSAttackA_Combo_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSAttackEnemy_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSDashDodge_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSImpactLeft_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSRoll_F_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/BlendSpaceAndMontages/QuinSS3HitLightAttack_Montage.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/Data/DA_CharacterClassInfo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/Data/DA_CharacterClassInfo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_HeavyAttack.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_HitReact.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_MeleeAttack.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_MeleeAttack.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_SlashDash.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayAbilities/GA_ThreeHit.uasset" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Blueprints/GameplayEffect/GE_Damage.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Blueprints/GameplayEffect/GE_Damage.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/ABP_Enemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/ABP_Enemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Enemy/BP_SlashEnemy.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Enemy/BP_SlashEnemy.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/Mannequins/Meshes/SK_Mannequin.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/PlayerCharacter/ABP_Slash.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/PlayerCharacter/ABP_Slash.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Characters/PlayerCharacter/BP_SlashCharacter.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Characters/PlayerCharacter/BP_SlashCharacter.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Quin_Animations/QuinTwo_Handed_Sword_Death_mixamo_com.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Quin_Animations/QuinTwo_Handed_Sword_Death_mixamo_com.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/SwordAnimationPack/Animations/Attacks/AttackA4.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/SwordAnimationPack/Animations/Attacks/AttackA4.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/SwordAnimationPack/Animations/Attacks/AttackA_Combo.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/SwordAnimationPack/Animations/Attacks/AttackA_Combo.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/DA_SlashInputConfig.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/DA_SlashInputConfig.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/ThirdPerson/Input/IMC_Default.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/Overlay/WBP_OverlayController.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/Overlay/WBP_OverlayController.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBar/WBP_BaseProgressBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBar/WBP_BaseProgressBar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/UI/ProgressBar/WBP_EnemyHealthBar.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/UI/ProgressBar/WBP_EnemyHealthBar.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/Weapons/urisel_sword_Skeleton.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/Weapons/urisel_sword_Skeleton.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/FG/C9C8NKPQ680JETAE5ROTT1.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/0/FG/C9C8NKPQ680JETAE5ROTT1.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/HL/XWFFRCIJ8QK4NRO30ALA6J.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/1/HL/XWFFRCIJ8QK4NRO30ALA6J.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/6U/35IFPFZ0B90C3QPPW42W8P.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/6U/35IFPFZ0B90C3QPPW42W8P.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/M3/7JQC72ZY37QM4IT43WD5CW.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/M3/7JQC72ZY37QM4IT43WD5CW.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/P3/O43ETCZTFMLWWH1CJ941H2.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/3/P3/O43ETCZTFMLWWH1CJ941H2.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/5T/4T5XMC8YNJ7SD8XUTE3OTU.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/5T/4T5XMC8YNJ7SD8XUTE3OTU.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/60/5PI42YRDC8HSSG6BVV2GRR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/4/60/5PI42YRDC8HSSG6BVV2GRR.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/11/IM858T68EBXCBX1T2FNR96.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/11/IM858T68EBXCBX1T2FNR96.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/7E/BEYC27T14FHBU6LF2F60RR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/7E/BEYC27T14FHBU6LF2F60RR.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/9Q/U98KGKQ41NJYFOGFQM8ZDY.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/9Q/U98KGKQ41NJYFOGFQM8ZDY.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/QO/CO9MG7REJF8N8AQFYRCI06.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/5/QO/CO9MG7REJF8N8AQFYRCI06.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/CZ/K2YM0JIRZ78IHGM8W2QBAF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/CZ/K2YM0JIRZ78IHGM8W2QBAF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HF/9H7TKAXH9DD8KI3TIXGI2I.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/HF/9H7TKAXH9DD8KI3TIXGI2I.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/IR/OTJMGDDXDV5TI7982YKZ5P.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/IR/OTJMGDDXDV5TI7982YKZ5P.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/NC/UUYHDUFQAXTRRN4RVOPIUF.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/NC/UUYHDUFQAXTRRN4RVOPIUF.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/XB/9VVR39MG0K7W5GQIEFE7SO.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/XB/9VVR39MG0K7W5GQIEFE7SO.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/YO/NG2R9BPZVA7ZDN0Z4VSTG6.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/6/YO/NG2R9BPZVA7ZDN0Z4VSTG6.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/3J/6B9RJI3FDPCETRKXUXCQ4C.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/8/3J/6B9RJI3FDPCETRKXUXCQ4C.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/U7/H8YL2PPHZPBTI74SUD0RNL.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/9/U7/H8YL2PPHZPBTI74SUD0RNL.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/16/Q7Y1URWWFS0TXGWUTO3S61.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/16/Q7Y1URWWFS0TXGWUTO3S61.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/17/6LXV4Y6DE3LUT705XNU4DZ.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/17/6LXV4Y6DE3LUT705XNU4DZ.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/MS/MRHJREJ6H7USQYWF1KO8F6.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/A/MS/MRHJREJ6H7USQYWF1KO8F6.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/4D/BBOCKSZY1GVHTFRX0PR0O8.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/4D/BBOCKSZY1GVHTFRX0PR0O8.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/8K/1IKKDYS7RULH8FRYRPPF04.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/8K/1IKKDYS7RULH8FRYRPPF04.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/EA/9BWDWCNL7OZT2HTML9LK1Y.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/EA/9BWDWCNL7OZT2HTML9LK1Y.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/FB/8RB55FM1HBEUVO4IOQC4YN.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/B/FB/8RB55FM1HBEUVO4IOQC4YN.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/QF/BY1DA5CRGQSAMOTK8RA8KR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/QF/BY1DA5CRGQSAMOTK8RA8KR.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/YT/CQR16QFDKKEYP53M51TV4F.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/C/YT/CQR16QFDKKEYP53M51TV4F.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/0G/JNKFA4X9LRMSF343ESPF6Q.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/0G/JNKFA4X9LRMSF343ESPF6Q.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/3V/NMHOKL5LGQDOAAG00FUMZR.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/3V/NMHOKL5LGQDOAAG00FUMZR.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/D/DE/SWSI13675DVYIZ0N4NF7Y3.uasset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/8O/GK06JAEJ82TQ0GA2QB0DJG.uasset" beforeDir="false" afterPath="$PROJECT_DIR$/Content/__ExternalActors__/ThirdPerson/Maps/ThirdPersonMap/E/8O/GK06JAEJ82TQ0GA2QB0DJG.uasset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" beforeDir="false" afterPath="$PROJECT_DIR$/Intermediate/CachedAssetRegistry_0.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/AutoScreenshot.png" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/AutoScreenshot.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Saved/Config/MacEditor/Editor.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/MacEditor/Editor.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Config/MacEditor/EditorPerProjectUserSettings.ini" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Config/MacEditor/EditorPerProjectUserSettings.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Saved/Telemetry/Telemetry.json" beforeDir="false" afterPath="$PROJECT_DIR$/Saved/Telemetry/Telemetry.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/HackSlash.Build.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/HackSlash.Build.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/Abilities/SlashDash.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/Abilities/SlashHeavyAttack.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/Abilities/SlashThreeHit.cpp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/ExecCalc_Damage.cpp" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashAbilitySystemLibrary.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashAbilitySystemLibrary.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashAttributeSet.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashAttributeSet.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashGameplayAbility.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/AbilitySystem/SlashGameplayAbility.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/Character/SlashCharacterBase.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/Character/SlashCharacterBase.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/Character/SlashEnemy.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/Character/SlashEnemy.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Private/SlashGameplayTags.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Private/SlashGameplayTags.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/Abilities/SlashDash.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/Abilities/SlashHeavyAttack.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/Abilities/SlashThreeHit.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/Data/CharacterClassInfo.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/Data/CharacterClassInfo.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/ExecCalc_Damage.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/SlashAbilitySystemLibrary.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/SlashAbilitySystemLibrary.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/SlashGameplayAbility.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/AbilitySystem/SlashGameplayAbility.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/Character/SlashCharacterBase.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/Character/SlashCharacterBase.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/Character/SlashEnemy.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/Character/SlashEnemy.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/Interaction/CombatInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/Interaction/CombatInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/Interaction/EnemyInterface.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/Interaction/EnemyInterface.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Source/HackSlash/Public/SlashGameplayTags.h" beforeDir="false" afterPath="$PROJECT_DIR$/Source/HackSlash/Public/SlashGameplayTags.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -139,7 +50,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;Uproject.HackSlash.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -260,6 +171,7 @@
       <workItem from="1746415463155" duration="16965000" />
       <workItem from="1746468593279" duration="7245000" />
       <workItem from="1746513294707" duration="11947000" />
+      <workItem from="1746540547862" duration="8387000" />
     </task>
     <servers />
   </component>
