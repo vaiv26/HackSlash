@@ -6,6 +6,7 @@
 #include "UObject/Interface.h"
 #include "EnemyInterface.generated.h"
 
+class ASlashAIController;
 // This class does not need to be modified.
 UINTERFACE(MinimalAPI)
 class UEnemyInterface : public UInterface
@@ -28,4 +29,10 @@ public:
  
 	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
 	AActor* GetCombatTarget() const;
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void StopEnemyBehaviourTree();
+
+	UFUNCTION(BlueprintCallable, BlueprintNativeEvent)
+	void StartEnemyBehaviourTree();
 };

@@ -42,6 +42,32 @@ void ASlashEnemy::PossessedBy(AController* NewController)
 	SlashAIController->GetBlackboardComponent()->SetValueAsBool(FName("RangedAttacker"), CharacterClass != ECharacterClass::Warrior);
 }
 
+void ASlashEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)
+{
+	CombatTarget = InCombatTarget;
+}
+
+AActor* ASlashEnemy::GetCombatTarget_Implementation() const
+{
+	return CombatTarget;
+}
+
+void ASlashEnemy::StopEnemyBehaviourTree_Implementation()
+{
+	if (UBrainComponent* BrainComponent = SlashAIController->GetBrainComponent())
+	{
+		BrainComponent->StopLogic("User requested stop");
+	}
+}
+
+void ASlashEnemy::StartEnemyBehaviourTree_Implementation()
+{
+	if (UBrainComponent* BrainComponent = SlashAIController->GetBrainComponent())
+	{
+		BrainComponent->StartLogic();
+	}
+}
+
 void ASlashEnemy::BeginPlay()
 {
 	Super::BeginPlay();
@@ -97,17 +123,6 @@ void ASlashEnemy::Die()
 	SetLifeSpan(LifeSpan);
 	Super::Die();
 }
-
-void ASlashEnemy::SetCombatTarget_Implementation(AActor* InCombatTarget)
-{
-	CombatTarget = InCombatTarget;
-}
-
-AActor* ASlashEnemy::GetCombatTarget_Implementation() const
-{
-	return CombatTarget;
-}
-
 
 void ASlashEnemy::HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewCount)
 {

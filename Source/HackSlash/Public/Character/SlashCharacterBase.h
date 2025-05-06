@@ -6,6 +6,8 @@
 #include "GameFramework/Character.h"
 #include "AbilitySystemInterface.h"
 #include "Interaction/CombatInterface.h"
+#include "Interaction/EnemyInterface.h"
+#include "NiagaraFunctionLibrary.h"
 #include "SlashCharacterBase.generated.h"
 
 class UGameplayAbility;
@@ -29,12 +31,13 @@ public:
 	
 
 	/** Combat Interface */
-	virtual UAnimMontage* GetHitReactMontage_Implementation() override;	
+	virtual UAnimMontage* GetHitReactMontage_Implementation(FVector HitDirection) override;	
 	virtual void Die() override;	
 	virtual FVector GetCombatTipSocketLocation_Implementation() override;
 	virtual FVector GetCombatTailSocketLocation_Implementation() override;
 	virtual bool IsDead_Implementation() const override;
 	virtual AActor* GetAvatar_Implementation() override;
+	virtual UNiagaraSystem* GetHitEffect_Implementation() override;
 	/** end Combat Interface */
 
 	UFUNCTION(NetMulticast, Reliable)
@@ -68,6 +71,9 @@ protected:
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
 	FName WeaponTailSocketName;
+
+	UPROPERTY(EditAnywhere,BlueprintReadOnly)
+	UNiagaraSystem* HitEffect;
 	
 	void ApplyEffectToSelf(TSubclassOf<UGameplayEffect> GameplayEffectClass, float Level) const;
 	virtual void InitializeDefaultAttributes() const;
@@ -81,6 +87,10 @@ private:
 	TArray<TSubclassOf<UGameplayAbility>> StartupAbilities;
 
 	UPROPERTY(EditAnywhere, Category = "Combat")
-	TObjectPtr<UAnimMontage> HitReactMontage;
+	TObjectPtr<UAnimMontage> HitLeftReactMontage;
+
+	UPROPERTY(EditAnywhere, Category = "Combat")
+	TObjectPtr<UAnimMontage> HitRightReactMontage;
+	
 
 };

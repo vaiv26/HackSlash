@@ -103,7 +103,7 @@ void USlashAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallb
 	{
 		SetMana(FMath::Clamp(GetMana(), 0.f, GetMaxMana()));
 	}
-
+//Damage
 	if (Data.EvaluatedData.Attribute == GetIncomingDamageAttribute())
 	{
 		const float LocalIncomingDamage = GetIncomingDamage();
@@ -124,9 +124,14 @@ void USlashAttributeSet::PostGameplayEffectExecute(const FGameplayEffectModCallb
 			}
 			else
 			{
-				FGameplayTagContainer TagContainer;
-				TagContainer.AddTag(FSlashGameplayTags::Get().Effects_HitReact);
-				Props.TargetASC->TryActivateAbilitiesByTag(TagContainer);
+				// Create gameplay event data with the hit direction
+				FGameplayEventData EventData;
+				EventData.Instigator = Data.EffectSpec.GetContext().GetEffectCauser();
+				EventData.Target = Props.TargetAvatarActor;
+				EventData.ContextHandle = Data.EffectSpec.GetContext();
+				UAbilitySystemBlueprintLibrary::SendGameplayEventToActor(Props.TargetAvatarActor,FSlashGameplayTags::Get().Effects_HitReact,EventData);
+
+				
 			}
 		}
 	}

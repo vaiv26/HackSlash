@@ -4,6 +4,7 @@
 #include "AbilitySystem/SlashAbilitySystemLibrary.h"
 
 #include "SQCapture.h"
+#include "AbilitySystem/SlashGameplayAbility.h"
 #include "AbilitySystem/Data/CharacterClassInfo.h"
 #include "Chaos/AABBTree.h"
 #include "Game/SlashGameModeBase.h"
@@ -45,11 +46,6 @@ void USlashAbilitySystemLibrary::InitializeDefaultAttributes(const UObject* Worl
 	const FGameplayEffectSpecHandle PrimaryAttributesSpecHandle = ASC->MakeOutgoingSpec(ClassDefaultInfo.PrimaryAttributes, Level, PrimaryAttributesContextHandle);
 	ASC->ApplyGameplayEffectSpecToSelf(*PrimaryAttributesSpecHandle.Data.Get());
  
-	/*FGameplayEffectContextHandle SecondaryAttributesContextHandle = ASC->MakeEffectContext();
-	SecondaryAttributesContextHandle.AddSourceObject(AvatarActor);
-	const FGameplayEffectSpecHandle SecondaryAttributesSpecHandle = ASC->MakeOutgoingSpec(CharacterClassInfo->SecondaryAttributes, Level, SecondaryAttributesContextHandle);
-	ASC->ApplyGameplayEffectSpecToSelf(*SecondaryAttributesSpecHandle.Data.Get());*/
- 
 	FGameplayEffectContextHandle VitalAttributesContextHandle = ASC->MakeEffectContext();
 	VitalAttributesContextHandle.AddSourceObject(AvatarActor);
 	const FGameplayEffectSpecHandle VitalAttributesSpecHandle = ASC->MakeOutgoingSpec(CharacterClassInfo->VitalAttributes, Level, VitalAttributesContextHandle);
@@ -59,10 +55,10 @@ void USlashAbilitySystemLibrary::InitializeDefaultAttributes(const UObject* Worl
 void USlashAbilitySystemLibrary::GiveStartupAbilities(const UObject* WorldContextObject, UAbilitySystemComponent* ASC,
 	ECharacterClass CharacterClass)
 {
-	ASlashGameModeBase* AuraGameMode = Cast<ASlashGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
-	if (AuraGameMode == nullptr) return;
+	ASlashGameModeBase* SlashGameMode = Cast<ASlashGameModeBase>(UGameplayStatics::GetGameMode(WorldContextObject));
+	if (SlashGameMode == nullptr) return;
  
-	UCharacterClassInfo* CharacterClassInfo = AuraGameMode->CharacterClassInfo;
+	UCharacterClassInfo* CharacterClassInfo = SlashGameMode->CharacterClassInfo;
 	if (CharacterClassInfo == nullptr) return;
 	for (TSubclassOf<UGameplayAbility> AbilityClass : CharacterClassInfo->CommonAbilities)
 	{
@@ -80,30 +76,30 @@ void USlashAbilitySystemLibrary::GiveStartupAbilities(const UObject* WorldContex
 	}
 }
 
-void USlashAbilitySystemLibrary::GetLivePlayersWithinRadius(const TArray<AActor*>& OverlappingActors, TArray<AActor*>& OutActors)
+bool USlashAbilitySystemLibrary::GetLivePlayers( const AActor* OverlappingActor)
 {
-	/*FCollisionQueryParams SphereParams;
-	SphereParams.AddIgnoredActors(ActorsToIgnore);
- 	
-	if (const UWorld* World = GEngine->GetWorldFromContextObject(WorldContextObject, EGetWorldErrorMode::LogAndReturnNull))
+	if (OverlappingActor->Implements<UCombatInterface>() && !ICombatInterface::Execute_IsDead(OverlappingActor))
 	{
-		TArray<FOverlapResult> Overlaps;
-		World->OverlapMultiByObjectType(Overlaps, SphereOrigin, FQuat::Identity, FCollisionObjectQueryParams(FCollisionObjectQueryParams::InitType::AllDynamicObjects), FCollisionShape::MakeSphere(Radius), SphereParams);
-		for (FOverlapResult& Overlap : Overlaps)
+		return true;
+	}
+	return false;
+}
+
+void USlashAbilitySystemLibrary::AddOrUpdateHitActor(TArray<FHitActorData>& HitActors, AActor* Actor, FVector Direction, FVector HitLocation)
+{
+	{
+		// Check if actor already exists
+		for (FHitActorData& ExistingData : HitActors)
 		{
-			if (Overlap.GetActor()->Implements<UCombatInterface>() && !ICombatInterface::Execute_IsDead(Overlap.GetActor()))
+			if (ExistingData.HitActor == Actor)
 			{
-				OutOverlappingActors.AddUnique(ICombatInterface::Execute_GetAvatar(Overlap.GetActor()));
+				// Update direction for existing actor
+				ExistingData.HitDirection = Direction;
+				return;
 			}
 		}
-	}*/
-
-	for (AActor* QueryActor : OverlappingActors)
-	{
-		if (QueryActor->Implements<UCombatInterface>() && !ICombatInterface::Execute_IsDead(QueryActor))
-		{
-			OutActors.AddUnique(ICombatInterface::Execute_GetAvatar(QueryActor));
-		}
+    
+		// Actor doesn't exist, add it
+		HitActors.Add(FHitActorData(Actor, Direction, HitLocation));
 	}
-	
 }

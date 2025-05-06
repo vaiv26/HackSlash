@@ -6,6 +6,7 @@
 #include "Kismet/BlueprintFunctionLibrary.h"
 #include "SlashAbilitySystemLibrary.generated.h"
 
+struct FHitActorData;
 enum class ECharacterClass : uint8;
 class UAbilitySystemComponent;
 class UOverlayWidgetController;
@@ -29,7 +30,9 @@ public:
 	static void GiveStartupAbilities(const UObject* WorldContextObject, UAbilitySystemComponent* ASC, ECharacterClass CharacterClass);
 
 	UFUNCTION(BlueprintCallable, Category = "AuraAbilitySystemLibrary|GameplayMechanics")
-	static void GetLivePlayersWithinRadius(
-		const TArray<AActor*>& OverlappingActors, TArray<AActor*>& OutActors);
+	static bool GetLivePlayers(const AActor* OverlappingActor);
+
+	UFUNCTION(BlueprintCallable, Category = "Hit Actor", meta = (DisplayName = "Add or Update Hit Actor"))
+	static void AddOrUpdateHitActor(UPARAM(ref) TArray<FHitActorData>& HitActors, AActor* Actor, FVector Direction, FVector HitLocation);
 	
 };

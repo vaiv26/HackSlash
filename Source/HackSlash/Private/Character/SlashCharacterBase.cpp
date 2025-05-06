@@ -16,6 +16,8 @@ ASlashCharacterBase::ASlashCharacterBase()
 
 	Weapon = CreateDefaultSubobject<USkeletalMeshComponent>("Weapon");
 	Weapon->SetupAttachment(GetMesh(),FName("WeaponHandSocket"));
+	Weapon->SetCollisionEnabled(ECollisionEnabled::QueryAndPhysics);
+	Weapon->SetCollisionResponseToAllChannels(ECR_Block);
 }
 
 UAbilitySystemComponent* ASlashCharacterBase::GetAbilitySystemComponent() const
@@ -28,9 +30,15 @@ UAttributeSet* ASlashCharacterBase::GetAttributeSet() const
 	return AttributeSet;
 }
 
-UAnimMontage* ASlashCharacterBase::GetHitReactMontage_Implementation()
+UAnimMontage* ASlashCharacterBase::GetHitReactMontage_Implementation(FVector HitDirection)
 {
-	return HitReactMontage;
+	const FVector TargetRightVector = GetActorRightVector();
+	float DotProduct = FVector::DotProduct(HitDirection, TargetRightVector);
+	if (DotProduct > 0.0f)
+	{
+		return HitRightReactMontage;
+	}
+	return HitLeftReactMontage;
 }
 
 void ASlashCharacterBase::Die()
@@ -59,6 +67,11 @@ bool ASlashCharacterBase::IsDead_Implementation() const
 AActor* ASlashCharacterBase::GetAvatar_Implementation()
 {
 	return this;
+}
+
+UNiagaraSystem* ASlashCharacterBase::GetHitEffect_Implementation()
+{
+	return HitEffect;
 }
 
 void ASlashCharacterBase::MulticastHandleDeath_Implementation()

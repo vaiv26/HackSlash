@@ -5,7 +5,6 @@
 #include "CoreMinimal.h"
 #include "AbilitySystem/Data/CharacterClassInfo.h"
 #include "Character/SlashCharacterBase.h"
-#include "Interaction/EnemyInterface.h"
 #include "UI/WidgetController/OverlayWidgetController.h"
 #include "SlashEnemy.generated.h"
 
@@ -31,18 +30,23 @@ public:
 	FOnAttributeChangedSignature OnMaxHealthChanged;
 
 	virtual void Die() override;
-	virtual void SetCombatTarget_Implementation(AActor* InCombatTarget) override;
-	virtual AActor* GetCombatTarget_Implementation() const override;
 
 	void HitReactTagChanged(const FGameplayTag CallbackTag, int32 NewCount);
 
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
 	bool bHitReacting = false;
 	UPROPERTY(BlueprintReadOnly, Category = "Combat")
-	float BaseWalkSpeed = 250.0f;
+	float BaseWalkSpeed = 400.0f;
 
 	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Combat")
 	float LifeSpan = 5.f;
+
+	/** Enemy Interface */
+	virtual void SetCombatTarget_Implementation(AActor* InCombatTarget) override;
+	virtual AActor* GetCombatTarget_Implementation() const override;
+	virtual void StopEnemyBehaviourTree_Implementation() override;
+	virtual void StartEnemyBehaviourTree_Implementation() override;
+	/** end Enemy Interface */
 
 	UPROPERTY(BlueprintReadWrite, Category = "Combat")
 	TObjectPtr<AActor> CombatTarget;
