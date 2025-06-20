@@ -1,6 +1,6 @@
 # Hack and Slash Game
 
-[Documentation](https://drive.google.com/file/d/1oH5X0Bhk_YEpN-5zX9JB1FGCZWZJn7-H/view?usp=sharing)
+[Documentation](https://drive.google.com/file/d/1x1EW7pogJMCHvuF_DaO7N8MMHGXkLr9E/view?usp=sharing)
 
 ## Video Files
 1. [Player Attacking AI](https://drive.google.com/file/d/1kCnoegeWSJo8gaCIwbe1RhVwTkFwP8E-/view?usp=sharing)
